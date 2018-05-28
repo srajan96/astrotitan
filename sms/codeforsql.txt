@@ -1,0 +1,27 @@
+drop database if exists sms;
+create database sms;
+use sms;
+create table login(name varchar(30),username varchar(30),password varchar(30),type varchar(2));
+insert into login values("principal","admin","password","a");
+
+create table fpass(username varchar(30),sq varchar(100),sans varchar(100));
+insert into fpass values("admin","What was your first pet name?","tom");
+
+create table staff(empno integer(5) primary key ,empname varchar (30),fathername varchar (30),mothername varchar (30),gender varchar(2),bloodgroup varchar(3),yob varchar(4),mob varchar(4),dob varchar(4),martialstatus varchar(20),laddress varchar (30),ldistrict varchar (15), lpin varchar (6),lstate varchar (15) ,llandline varchar (15), lcell varchar (13) ,email varchar (30),paddress varchar (30),pdistrict varchar (15), ppin varchar (6),pstate varchar (15) ,plandline varchar (15), pcell varchar (13) ,yoj varchar(4),moj varchar(4),doj varchar(4),basic_pay varchar(9) ,dept varchar (30),nature_of_job varchar (10),photopath varchar(500),curstatus varchar(30));
+
+create table student(schno integer(5) primary key,class varchar (4),section varchar(2),subject varchar(30),name varchar (25), fathername varchar (25), mothername varchar (25), yob varchar(20),mob varchar(20),dob varchar(20),gender varchar(2),bloodgroup varchar(3),parentwpadd varchar(300),parentcellno varchar(12),parentofficeno varchar(12),laddress varchar (200), ldistrict varchar(30),lpostalcode integer(8),lcell bigint(30),llandline varchar(30),lstate varchar (15),paddress varchar (200), pdistrict varchar(30),ppostalcode integer(8),pcell bigint(30),plandline varchar(30),pstate varchar (15),previousschool varchar(200),previouseducationstate varchar(30),previousclass varchar(4),lastpercent decimal(5,2),photo varchar(100),curstatus varchar(30));
+
+
+create table classlist(Classes varchar(30),status varchar(2));
+create table exams(Class varchar(10),Exam_name varchar(10));
+
+create table activationstatus(stat varchar(2),schooladdress varchar(200),board varchar(10),affno varchar(20),logoloc varchar(200));
+insert into activationstatus values('0',null,null,null,null);
+create table addedclasses(classname varchar(30));
+
+create table classteacherlist(Class varchar(10),Classteacher varchar(50),classteacheruserid varchar(20),status varchar(2));
+ 
+create table equalification(empno varchar(10),ename varchar(30),qualification varchar(20),institute_address varchar(100),year varchar(4),percentage varchar(6));
+
+create table epreviousexperience(empno varchar(10),ename varchar(30),previous_school_address varchar(100),duration varchar(3),reference_person varchar(100),reference_person_address varchar(200));
+
